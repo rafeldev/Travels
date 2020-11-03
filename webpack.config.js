@@ -26,8 +26,8 @@ module.exports = {
           {
             loader: 'html-loader',
             options: {
-              attrs: [":src"]
-            }
+              attrs: [':src'],
+            },
           },
         ],
       },
@@ -42,16 +42,16 @@ module.exports = {
         ],
       },
       {
-        test:/\.jpg|png|gif|woff|not|tif|seg|mp4|webm$/, 
+        test: /\.(jpg|mp4|gif)$/i,
         use: {
           loader: 'url-loader',
           options: {
-              limit: 900000, //el limite 
-            }
-        }
+            limit: 900000, // el limite
+          },
+        },
       },
     ],
-  },  
+  },
   plugins: [
     new HtmlWebPackPlugin({
       template: './public/index.html',

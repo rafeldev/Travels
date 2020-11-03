@@ -1,19 +1,23 @@
-import React from 'react'
-import './style.css'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './style.css';
 
-const STYLES = [ 'btn--primary', 'btn--outline' ]
+const STYLES = ['btn--primary', 'btn--outline'];
 
-const SIZES = [ 'btn--medium', 'btn--large' ]
+const SIZES = ['btn--medium', 'btn--large'];
 
-export const Button = ({children, type, onClick, buttonStyle, buttonSize}) => {
-  const checkButtonStyle = STYLES.includes(buttonStyle) 
-  ? buttonStyle 
-  : STYLES[0]
+export const Button = ({
+  children,
+  type,
+  onClick,
+  buttonStyle,
+  buttonSize,
+}) => {
+  const checkButtonStyle = STYLES.includes(buttonStyle)
+    ? buttonStyle
+    : STYLES[0];
 
-  const checkButtonSize = SIZES.includes(buttonStyle)
-  ? buttonSize
-  : SIZES[0]
+  const checkButtonSize = SIZES.includes(buttonStyle) ? buttonSize : SIZES[0];
 
   return (
     <Link to="/sign-up" className="btn-mobile">
@@ -24,7 +28,6 @@ export const Button = ({children, type, onClick, buttonStyle, buttonSize}) => {
       >
         {children}
       </button>
-
     </Link>
-  )
+  );
 };
